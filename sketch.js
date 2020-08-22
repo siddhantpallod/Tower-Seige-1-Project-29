@@ -16,8 +16,8 @@ function setup() {
   world = engine.world;
   
   ground1 = new Ground(600,490,1200,20);
-  stand1 = new Ground(450,400,300,10);
-  stand2 = new Ground(850,200,200,10);
+  stand1 = new Ground(450,400,350,10);
+  stand2 = new Ground(850,200,250,10);
 
   // level 1 stand 1
   block1 = new Block(325,365,50,60);
@@ -108,11 +108,12 @@ function draw() {
 
   imageMode(CENTER);
   image(poly_img,ball.position.x,ball.position.y,50,50);
+
   slingShot1.display();
 }
 
 function mouseDragged(){
-  Matter.Body.setPosition(ball.body,{x:mouseX,y:mouseY});
+  Matter.Body.setPosition(this.ball,{x:mouseX,y:mouseY});
 }
 
 function mouseReleased(){
